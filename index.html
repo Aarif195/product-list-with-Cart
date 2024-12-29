@@ -1,367 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
-    rel="stylesheet">
+    <title>Product list with cart</title>
+    <link rel="stylesheet" href="index.css" />
 
-  <title> Product list with cart</title>
-  <link rel="stylesheet" href="index.css">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
-</head>
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
 
-<body>
-
-  <!-- <h2>Desserts</h2> -->
-
-  <main>
-    <div>
-      <h2>Desserts</h2>
-      <header>
+  <body>
+    <main>
+      <div>
+        <h2>Desserts</h2>
+        <div class="productContainer">
+          <!-- 
         <div>
           <div class="big">
             <img src="assets/images/image-waffle-tablet.jpg" alt="">
             <div class="add-to-cart ">
               <img src="assets/images/icon-add-to-cart.svg" alt="">
               <h3>Add to Cart </h3>
-              <!-- <img src="assets/images/icon-decrement-quantity.svg" alt="">
-              <span>1</span>
-              <img src="assets/images/icon-increment-quantity.svg" alt=""> -->
+            </div>
+            <div class="add-to-cart-1">
+              <img src="assets/images/icon-decrement-quantity.svg" alt="">
+              <span class="orderCount">0</span>
+              <img src="assets/images/icon-increment-quantity.svg" alt="">
             </div>
           </div>
-
           <p>Waffle </p>
           <h4>Waffle with Berries</h4>
           <h5>$6.50</h5>
+        </div> -->
         </div>
-
-
-        <div>
-          <div class="big">
-            <img src="assets/images/image-creme-brulee-tablet.jpg" alt="">
-
-            <div class="add-to-cart">
-              <img src="assets/images/icon-add-to-cart.svg" alt="">
-              <h3>Add to Cart </h3>
-
-              <!-- <h3>3</h3>
-              <h3>3</h3>
-              <h3>4</h3> -->
-            </div>
-          </div>
-
-          <p>Crème Brûlée</p>
-          <h4>Vanilla Bean Crème Brûlée</h4>
-          <h5>$7.00</h5>
-        </div>
-
-
-        <div>
-          <div class="big">
-            <img src="assets/images/image-macaron-desktop.jpg" alt="">
-
-            <div class="add-to-cart">
-              <img src="assets/images/icon-add-to-cart.svg" alt="">
-              <h3>Add to Cart</h3>
-            </div>
-          </div>
-
-          <p>Macaron </p>
-          <h4>Macaron Mix of Five</h4>
-          <h5>$8.00
-          </h5>
-        </div>
-
-
-        <div>
-          <div class="big">
-            <img src="assets/images/image-tiramisu-desktop.jpg" alt="">
-
-            <div class="add-to-cart">
-              <img src="assets/images/icon-add-to-cart.svg" alt="">
-              <h3>Add to Cart</h3>
-            </div>
-          </div>
-
-          <p>Tiramisu </p>
-          <h4>Classic Tiramisu</h4>
-          <h5>$5.50 </h5>
-        </div>
-
-
-        <div>
-          <div class="big">
-            <img src="assets/images/image-baklava-desktop.jpg" alt="">
-
-            <div class="add-to-cart">
-              <img src="assets/images/icon-add-to-cart.svg" alt="">
-              <h3>Add to Cart </h3>
-            </div>
-          </div>
-
-          <p>Baklava</p>
-          <h4>Pistachio Baklava</h4>
-          <h5>$4.00
-          </h5>
-        </div>
-
-
-        <div>
-          <div class="big">
-            <img src="assets/images/image-meringue-desktop.jpg" alt="">
-
-            <div class="add-to-cart">
-              <img src="assets/images/icon-add-to-cart.svg" alt="">
-              <h3>Add to Cart</h3>
-            </div>
-          </div>
-
-          <p>Pie</p>
-          <h4>Lemon Meringue Pie</h4>
-          <h5>$5.00</h5>
-        </div>
-
-
-        <div>
-          <div class="big">
-            <img src="assets/images/image-cake-mobile.jpg" alt="">
-
-            <div class="add-to-cart">
-              <img src="assets/images/icon-add-to-cart.svg" alt="">
-              <h3>Add to Cart</h3>
-            </div>
-          </div>
-
-          <p>Cake </p>
-          <h4>Red Velvet Cake</h4>
-          <h5>$4.50 </h5>
-        </div>
-
-
-        <div>
-          <div class="big">
-            <img src="assets/images/image-brownie-tablet.jpg" alt="">
-
-            <div class="add-to-cart">
-              <img src="assets/images/icon-add-to-cart.svg" alt="">
-              <h3>Add to Cart
-              </h3>
-            </div>
-          </div>
-
-          <p>Brownie
-          </p>
-          <h4>Salted Caramel Brownie
-          </h4>
-          <h5>$5.50
-          </h5>
-        </div>
-
-
-        <div>
-          <div class="big">
-            <img src="assets/images/image-panna-cotta-tablet.jpg" alt="">
-
-            <div class="add-to-cart">
-              <img src="assets/images/icon-add-to-cart.svg" alt="">
-              <h3>Add to Cart
-              </h3>
-            </div>
-          </div>
-
-          <p>Panna Cotta
-          </p>
-          <h4>Vanilla Panna Cotta
-          </h4>
-          <h5>$6.50
-          </h5>
-        </div>
-      </header>
-    </div>
-    <!-- Cart box -->
-    <!-- <div class="cart-box">
-      <h3>Your Cart
-        (Quantity)
-      </h3>
-      <div class="order-list-box">
-        <img src="assets/images/illustration-empty-cart.svg" alt="">
       </div>
-    </div> -->
-    <div class="cart-box">
-      <h3>Your Cart
-        <span>(7)</span>
-        <!-- (Quantity) -->
-      </h3>
-      <div class="order-list-box">
 
-        <div class="food-box">
+      <!-- Empty Cart Box -->
+      <!-- Cart box -->
+      <div class="cart-box">
+        <h3>Your Cart (0)</h3>
+        <div style="display: flex; justify-content: center">
           <div>
-            <h4>Classic Tiramisu
-            </h4>
+            <img src="assets/images/illustration-empty-cart.svg" alt="" />
+            <p>Your added items will appear here</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- filled Cart Box -->
+      <div class="cart-box-filled">
+        <h3>Your Cart ( <span class="ordered-value">0</span> )</h3>
+
+        <div class="order-list-box">
+          <!-- <div class="food-box">
+          <div>
+            <h4>waffle with Berries</h4>
             <div class="food-price">
-              <h6>1x </h6>
+              <h6><span>1</span>x</h6>
               <span class="span-1">@$5.50</span>
               <span class="span-2">@$5.50</span>
             </div>
           </div>
-
-          <img src="assets/images/icon-remove-item.svg" alt="">
-
+          <img src="assets/images/icon-remove-item.svg" alt=""> -->
         </div>
-        <hr class="line">
-
-        <!--  -->
-        <div class="food-box">
-          <div>
-            <h4>Vanilla Bean Creme Brulle
-            </h4>
-            <div class="food-price">
-              <h6>4x</h6>
-              <span class="span-1">@$5.50</span>
-              <span class="span-2">@$5.50</span>
-            </div>
-          </div>
-          <img src="assets/images/icon-remove-item.svg" alt="">
-
-        </div>
-        <hr class="line">
-
-
-        <!--  -->
-        <div class="food-box">
-          <div>
-            <h4>Vanilla Panna Cotta
-            </h4>
-            <div class="food-price">
-              <h6>2x</h6>
-              <span class="span-1">@$5.50</span>
-              <span class="span-2">@$5.50</span>
-            </div>
-          </div>
-          <img src="assets/images/icon-remove-item.svg" alt="">
-        </div>
-        <hr class="line">
-
-
 
         <!--  Cart Total -->
         <div class="cart-total">
           <p>Order Total</p>
-          <h3>$46.50</h3>
+          <h3 class="cart-total-h3">0</h3>
         </div>
-
         <div class="carbon-box">
-          <img src="assets/images/icon-carbon-neutral.svg" alt="">
+          <img src="assets/images/icon-carbon-neutral.svg" alt="" />
           <p>This a <span>carbon-neutral</span> delivery</p>
         </div>
 
+        <!--  Cart Total Button -->
         <button class="confirm-order-btn">Confirm Order</button>
-
       </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- Your added items will appear here -->
+    <!-- Modal Section -->
+    <section>
+      <div class="confirm-box">
+        <img
+          src="assets/images/icon-order-confirmed.svg"
+          alt=""
+          class="image"
+        />
+        <h1>Order COnfirmed</h1>
+        <p>We hope you enjoy your food!</p>
 
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
-
-
-  <!-- Modal Section -->
-  <section>
-    <div class="confirm-box">
-      <img src="assets/images/icon-order-confirmed.svg" alt="" class="image">
-      <h1>Order COnfirmed</h1>
-      <p>We hope you enjoy your food!</p>
-
-      <div class="item-box">
-
-        <!--  -->
-        <div class="item">
-          <div class="item-order">
-            <div class="item-price">
-              <img src="assets/images/image-tiramisu-desktop.jpg" alt="">
-              <div>
-                <h4>Classic Tiramisu
-                </h4>
-                <h6>1x <span>@$5.50</span></h6>
-              </div>
-            </div>
-            <div>
-              <p>@$5.50</p>
-            </div>
-
-          </div>
-        </div>
-        <hr>
-        <!--  -->
-        <div class="item">
-          <div class="item-order">
-            <div class="item-price">
-              <img src="assets/images/image-creme-brulee-desktop.jpg" alt="">
-              <div>
-                <h4>Vanilla Bean Creme Brûlée
-                </h4>
-                <h6>4x <span>@$5.50</span></h6>
-              </div>
-            </div>
-            <div>
-              <p>@$5.50</p>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <!--  -->
-
-        <div class="item">
-          <div class="item-order">
-            <div class="item-price">
-              <img src="assets/images/image-panna-cotta-desktop.jpg" alt="">
-              <div>
-                <h4>Vanilla Panna Cotta
-                </h4>
-                <h6>2x <span>@$5.50</span></h6>
-              </div>
-            </div>
-            <div>
-              <p>@$5.50</p>
-            </div>
-          </div>
-        </div>
-        <hr>
-
-        <!--  -->
+        <div class="item-box"></div>
 
         <div class="order-total">
           <p>Order Total</p>
-          <h3>$46.50</h3>
+          <h3 class="orderTotalH3"></h3>
         </div>
-
+        <div class="button-div">
+          <button class="new-order-btn">Start New Order</button>
+        </div>
       </div>
-      <button class="new-order-btn">Start New Order</button>
-    </div>
-  </section>
-  
-  <script src="script.js"></script>
-</body>
+    </section>
 
+    <script src="script.js"></script>
+  </body>
 </html>
