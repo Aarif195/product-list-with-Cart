@@ -192,8 +192,6 @@ let orderProducts = [
 
 function populateOrderList() {
   if (orderProducts.length) {
-    console.log(orderProducts);
-
     emptyCart.style.display = "none";
     filledsCart.style.display = "block";
     const cartTotalH3 = document.querySelector(".cart-total-h3");
@@ -239,7 +237,6 @@ orderList.addEventListener("click", (event) => {
 
     const elementId = document.getElementById(foodId);
     const nextElementId = elementId.firstElementChild;
-    // console.log(nextElementId);
 
     const addToCart = elementId.querySelector(".add-to-cart");
     const addToCart1 = elementId.querySelector(".add-to-cart-1");
@@ -255,10 +252,82 @@ orderList.addEventListener("click", (event) => {
 
 const confirmBtn = document.querySelector(".confirm-order-btn");
 const confirmBox = document.querySelector("section");
-const bottonDiv = document.querySelector(".button-div");
-console.log(bottonDiv);
 
 const itemBox = document.querySelector(".item-box");
-console.log(itemBox);
 
+let confirmTotal = [
+  // {
+  //   id: 1,
+  //   name: "waffle with Berries",
+  //   price: 10.99,
+  //   category: "waffle",
+  //   image: "image-waffle-tablet.jpg",
+  //   quantity: 1,
+  // },
+  // {
+  //   id: 2,
+  //   name: "Vanilla Bean Crème Brûlée",
+  //   price: 4.33,
+  //   category: "Creme Brulee",
+  //   image: "image-creme-brulee-tablet.jpg",
+  //   quantity: 4,
+  // },
+  // {
+  //   id: 3,
+  //   name: "Macaron Mix of Five",
+  //   price: 10.99,
+  //   price2: 10.99,
+  //   category: "Macaron",
+  //   image: "image-macaron-desktop.jpg",
+  //   quantity: 2,
+  // },
+];
 
+function modalbox() {
+  const orderTotalH3 = document.querySelector(".orderTotalH3");
+  let total = 0;
+  for (let i = 0; i < orderProducts.length; i++) {
+    total += orderProducts[i].price * orderProducts[i].quantity;
+  }
+  orderTotalH3.innerHTML = total.toFixed(2, 0);
+
+  itemBox.innerHTML = orderProducts
+    .map(
+      (itemlist) =>
+        `
+  <div class="item" id="">
+            <div class="item-order">
+              <div class="item-price">
+                <img src="assets/images/${itemlist.image}" alt="" />
+                <div>
+                  <h4>${itemlist.name}</h4>
+                  <h6>${itemlist.quantity}x <span>@$${
+          itemlist.price * itemlist.quantity
+        }</span></h6>
+                </div>
+              </div>
+              <div>
+                <p>@$${itemlist.price * itemlist.quantity}</p>
+              </div>
+            </div>
+          </div>
+`
+    )
+    .join(" ");
+}
+
+confirmBtn.addEventListener("click", () => {
+  confirmBox.style.display = "block";
+  modalbox();
+});
+
+const startNewOrder = document.querySelector(".new-order-btn");
+startNewOrder.addEventListener("click", () => {
+  const addToCartBtn = document.querySelectorAll(".add-to-cart");
+  console.log(addToCartBtn);
+
+  
+  confirmBox.style.display = "none";
+  filledsCart.style.display = "none";
+  emptyCart.style.display = "block";
+});
